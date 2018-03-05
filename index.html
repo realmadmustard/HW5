@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BAYAN</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .header, .header-content {
+        margin: auto;
+        width: 33.3%;
+        height: 50px;
+        font-size: 24px;
+        font-family: monospace;
+        text-align: center;
+        background-color: #ccc;
+    }
+    .header:first-child {
+        margin-top: 50px;
+    }
+    .header {
+        cursor: pointer;
+    }
+    .header-content {
+        font-size: 18px;
+        height: auto;
+        display: none;
+        padding-bottom: 15px;
+    }
+    .active {
+        display: block;
+    }
+    </style>
+    
+</head>
+
+<body>
+	<div class="header">
+        <p>Header 1</p>
+    </div>
+    <div class="header-content">
+        <p>Content 1</p>
+        <p>Content 2</p>
+        <p>Content 3</p>
+    </div>
+    <div class="header">
+        <p>Header 2</p>
+    </div>
+    <div class="header-content">
+        <p>Content 1</p>
+        <p>Content 2</p>
+        <p>Content 3</p>
+    </div>
+    <div class="header">
+        <p>Header 3</p>
+    </div>
+    <div class="header-content">
+        <p>Content 1</p>
+        <p>Content 2</p>
+        <p>Content 3</p>
+    </div>
+	<script>
+	   var button = document.querySelectorAll(".header");
+       for (var i = 0; i < button.length; i++) {
+        button[i].addEventListener ('click', function () {
+           if(!(this.nextElementSibling.classList.contains('active'))) {
+            this.nextElementSibling.classList.add('active');
+           } else {
+            this.nextElementSibling.classList.remove('active')
+           }
+        });
+       }
+	</script>
+</body>
+
+</html>
